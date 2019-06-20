@@ -11,9 +11,11 @@ import UIKit
 class ViewController: UIViewController {
     @IBOutlet var busImageView: UIImageView!
     @IBOutlet var carImageView: UIImageView!
+    
+    var multiple: CGFloat = 1
 
-    var multiple = 1
     var animator: UIDynamicAnimator?
+    var carAnimator: UIDynamicAnimator?
     let gravity = UIGravityBehavior()
     let carGravity = UIGravityBehavior()
 
@@ -31,14 +33,13 @@ class ViewController: UIViewController {
 
     func createAnimatorStuff() {
         animator = UIDynamicAnimator(referenceView: view)
-
-        // gravity.addItem(busImageView);
+        carAnimator = UIDynamicAnimator(referenceView: view)
+        gravity.addItem(busImageView);
         carGravity.addItem(carImageView)
-        gravity.gravityDirection = CGVector(dx: -Double(multiple) * 0.8, dy: 0)
-        gravity.setAngle(CGFloat(multiple) * CGFloat.pi, magnitude: 1)
-        carGravity.gravityDirection = CGVector(dx: Double(multiple) * 0.8, dy: 0)
+        gravity.gravityDirection = CGVector(dx: multiple * 0.8, dy: 0)
+        carGravity.gravityDirection = CGVector(dx: multiple * -0.9, dy: 0)
         animator?.addBehavior(gravity)
-        animator?.addBehavior(carGravity)
+        carAnimator?.addBehavior(carGravity)
 
         if animator?.isRunning ?? false {
             multiple *= -1

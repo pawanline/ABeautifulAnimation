@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ABeautifulAnimation/ViewController.swift"
-            timestampString = "582748678.447035"
+            timestampString = "582750731.346221"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "47"
-            endingLineNumber = "47"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
             landmarkName = "createAnimatorStuff()"
             landmarkType = "7">
          </BreakpointContent>
